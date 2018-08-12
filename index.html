@@ -157,7 +157,10 @@
             function restart() {
                 //hide anything on stage and show the score
                 pipes.removeAllChildren();
-                createjs.Tween.get(start).to({y:start.y + 10}, 50).call(removeStart)
+
+                if (start) {
+                    createjs.Tween.get(start).to({y:start.y + 10}, 50).call(removeStart)
+                }
                 counter.text = 0
                 counterOutline.text = 0
                 counterOutline.alpha = 0
@@ -173,6 +176,9 @@
                 bird.rotation = 0
                 createjs.Tween.get(bird, {loop:true}).to({y:startY + wiggleDelta}, 380, createjs.Ease.sineInOut).to({y:startY}, 380, createjs.Ease.sineInOut);
             }
+
+
+
 
             function die() {
                 dead = true
