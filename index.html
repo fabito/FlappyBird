@@ -9,6 +9,18 @@
         <script src="createjs-2013.09.25.min.js"></script>
         <script src="ndgmr.Collision.js"></script>
         <style type="text/css">
+
+            @font-face {
+                font-family: 'Flappy Bird';
+                src: url('fonts/FB.eot');
+                src: url('fonts/FB.eot?#iefix') format('embedded-opentype'),
+                     url('fonts/FB.woff') format('woff'),
+                     url('fonts/FB.ttf') format('truetype'),
+                     url('fonts/FB.svg#04b_19regular') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+
             body, html {
                 margin: 0px;
                 padding: 0px;
@@ -36,7 +48,7 @@
             var masterPipeDelay = 78; // delay between pipes
             var pipeDelay = masterPipeDelay; //counter used to monitor delay
 
-            var counterShow = false;
+            var counterShow = true;
 
             document.onkeydown = handleKeyDown;
 
@@ -147,7 +159,7 @@
                     startJump = true
                     if (!started) {
                         started = true
-                        // counterShow = true
+                        counterShow = true
                     }
                 }
             }
